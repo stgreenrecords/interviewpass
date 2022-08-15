@@ -56,6 +56,11 @@
             <artifactId>core</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>com.sling.api-builder.core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -70,6 +75,11 @@
                         <embedded>
                             <groupId>${project.groupId}</groupId>
                             <artifactId>core</artifactId>
+                            <filter>true</filter>
+                        </embedded>
+                        <embedded>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>com.sling.api-builder.core</artifactId>
                             <filter>true</filter>
                         </embedded>
                     </embeddeds>

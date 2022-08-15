@@ -46,22 +46,7 @@ public class InterviewPassErrorHandling extends SlingSafeMethodsServlet {
     protected void doGet(SlingHttpServletRequest request,
             SlingHttpServletResponse response) throws ServletException,
             IOException {
-        Resource resource = request.getResource();
-
-        Writer w = response.getWriter();
-        w.write("<!DOCTYPE html PUBLIC \"-//IETF//DTD HTML 2.0//EN\">");
-        w.write("<html>");
-        w.write("<head>");
-        w.write("<title>Hello World Servlet</title>");
-        w.write("</head>");
-        w.write("<body>");
-        w.write("<h1>Hello ");
-        w.write(resource.getPath());
-        w.write("</h1>");
-        w.write("</body>");
-        w.write("</html>");
-        
-        log.info("Hello World Servlet");
+        response.sendRedirect("/content/home/utils/error.html");
         
     }
 

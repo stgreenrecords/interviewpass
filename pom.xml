@@ -440,10 +440,48 @@
                 <version>1.7.25</version>
                 <scope>test</scope>
             </dependency>
+            <dependency>
+                <artifactId>jackson-core</artifactId>
+                <version>2.13.1</version>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <artifactId>jackson-databind</artifactId>
+                <version>2.13.1</version>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <artifactId>guava</artifactId>
+                <version>15.0</version>
+                <groupId>com.google.guava</groupId>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <artifactId>org.apache.sling.jcr.base</artifactId>
+                <version>3.1.10</version>
+                <groupId>org.apache.sling</groupId>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <artifactId>org.apache.sling.commons.osgi</artifactId>
+                <version>2.4.2</version>
+                <groupId>org.apache.sling</groupId>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <artifactId>jackrabbit-jcr-commons</artifactId>
+                <version>2.20.4</version>
+                <groupId>org.apache.jackrabbit</groupId>
+                <scope>provided</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
-<modules>  <module>core</module>
+<modules>
+    <module>core</module>
     <module>ui.apps</module>
+    <module>sling-api-builder-core</module>
     <module>launcher</module>
   </modules>
 </project>
