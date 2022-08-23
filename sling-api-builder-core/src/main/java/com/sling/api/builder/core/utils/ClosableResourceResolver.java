@@ -1,6 +1,8 @@
 package com.sling.api.builder.core.utils;
 
 import org.apache.sling.api.resource.*;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Iterator;
@@ -30,6 +32,11 @@ public class ClosableResourceResolver implements AutoCloseable, ResourceResolver
 
     public static ResourceResolver creatService(ResourceResolverFactory factory, Map<String, Object> params) throws LoginException {
         return new ClosableResourceResolver(factory.getServiceResourceResolver(params));
+    }
+
+    @Override
+    public @NotNull Map<String, Object> getPropertyMap() {
+        return null;
     }
 
     @Override
@@ -143,6 +150,11 @@ public class ClosableResourceResolver implements AutoCloseable, ResourceResolver
     @Override
     public Resource create(Resource resource, String s, Map<String, Object> map) throws PersistenceException {
         return resourceResolver.create(resource, s, map);
+    }
+
+    @Override
+    public boolean orderBefore(@NotNull Resource parent, @NotNull String name, @Nullable String followingSiblingName) throws UnsupportedOperationException, PersistenceException, IllegalArgumentException {
+        return false;
     }
 
     @Override

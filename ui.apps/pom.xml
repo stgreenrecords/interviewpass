@@ -85,6 +85,16 @@
                     </embeddeds>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <inherited>true</inherited>
+                <configuration>
+                    <instructions>
+                        <Sling-Nodetypes>${basedir}/META-INF/vault/interviewpass.cnd</Sling-Nodetypes>
+                    </instructions>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
     <profiles>

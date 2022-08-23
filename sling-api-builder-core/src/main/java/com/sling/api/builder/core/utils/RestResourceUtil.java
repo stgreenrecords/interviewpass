@@ -21,16 +21,16 @@ public final class RestResourceUtil {
 
     private static final Logger LOG = LoggerFactory.getLogger(RestResourceUtil.class);
 
-    public static final String NT_WEDDING_RESOURCE = "rest:resource";
-    public static final String NT_WEDDING_RESOURCE_MIXIN = "mix:restResource";
-    public static final String REQUEST_PARAMETER_WEDDING_RESOURCE_ID = "rest:resourceId";
-    public static final String REQUEST_PARAMETER_WEDDING_RESOURCE_TYPE = "rest:resourceType";
-    public static final String WEDDING_RESOURCE_TYPE_USER = "user";
+    public static final String NT_IP_RESOURCE = "ip:resource";
+    public static final String NT_IP_RESOURCE_MIXIN = "mix:ipResource";
+    public static final String REQUEST_PARAMETER_IP_RESOURCE_ID = "ip:resourceId";
+    public static final String REQUEST_PARAMETER_RESOURCE_TYPE = "ip:resourceType";
+    public static final String IP_RESOURCE_TYPE_USER = "user";
     public static final String REQUEST_PARAMETER_ID = "id";
     private static final ObjectMapper MAPPER = new ObjectMapper();
-    private static final String RESOURCE_BY_ID_QUERY = "SELECT * FROM [rest:resource] AS user WHERE user.[rest:resourceId] = '%s'";
-    private static final String PART_USER_QUERY = "AND resource.[rest:resourceId] = '%s'";
-    private static final List<String> ID_LIST = ImmutableList.of(REQUEST_PARAMETER_WEDDING_RESOURCE_ID, REQUEST_PARAMETER_ID);
+    private static final String RESOURCE_BY_ID_QUERY = "SELECT * FROM [ip:resource] AS user WHERE user.[ip:resourceId] = '%s'";
+    private static final String PART_USER_QUERY = "AND resource.[ip:resourceId] = '%s'";
+    private static final List<String> ID_LIST = ImmutableList.of(REQUEST_PARAMETER_IP_RESOURCE_ID, REQUEST_PARAMETER_ID);
 
     private RestResourceUtil() {
     }
@@ -125,7 +125,7 @@ public final class RestResourceUtil {
     }
 
     public static boolean isResourceExist(SlingHttpServletRequest request) {
-        return Optional.ofNullable(request.getParameter(REQUEST_PARAMETER_WEDDING_RESOURCE_ID))
+        return Optional.ofNullable(request.getParameter(REQUEST_PARAMETER_IP_RESOURCE_ID))
                 .map(getResourceByID(request.getResourceResolver()))
                 .isPresent();
 

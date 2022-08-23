@@ -114,9 +114,9 @@ public class ModelAdapter implements AdapterFactory {
             return;
         }
         final String id = RestResourceUtil.generateId();
-        properties.put(RestResourceUtil.REQUEST_PARAMETER_WEDDING_RESOURCE_ID, id);
+        properties.put(RestResourceUtil.REQUEST_PARAMETER_IP_RESOURCE_ID, id);
         try {
-            resourceNode.addMixin(RestResourceUtil.NT_WEDDING_RESOURCE_MIXIN);
+            resourceNode.addMixin(RestResourceUtil.NT_IP_RESOURCE_MIXIN);
             modelResource.getResourceResolver().commit();
         } catch (RepositoryException | PersistenceException e) {
             LOG.error(e.getMessage(), e);

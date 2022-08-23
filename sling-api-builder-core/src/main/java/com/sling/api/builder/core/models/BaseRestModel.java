@@ -15,7 +15,7 @@ public class BaseRestModel {
     @JsonIgnore
     private Resource resource;
 
-    @ValueMapValue(name = RestResourceUtil.REQUEST_PARAMETER_WEDDING_RESOURCE_ID)
+    @ValueMapValue(name = RestResourceUtil.REQUEST_PARAMETER_IP_RESOURCE_ID)
     private String id;
 
     @ValueMapValue(name = "sling:resourceType")

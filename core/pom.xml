@@ -144,6 +144,12 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>com.sling.api-builder.core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
     <!--

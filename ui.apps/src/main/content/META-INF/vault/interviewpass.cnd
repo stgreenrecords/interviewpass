@@ -1,0 +1,14 @@
+<ip = 'http://interviewpass/ip'>
+<sling = 'http://sling.apache.org/jcr/sling/1.0'>
+
+/**
+ * Interviewpass resource
+ */
+[ip:resource] > nt:unstructured
+  - ip:resourceId (string)
+
+[ip:resource] > nt:unstructured
+  - ip:resourceType (string)
+
+[mix:ipResource] > ip:resource mixin
+  - ip:resourceId (string)

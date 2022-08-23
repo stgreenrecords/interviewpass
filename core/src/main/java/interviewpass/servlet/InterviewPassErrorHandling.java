@@ -34,8 +34,8 @@ import java.io.Writer;
         service = Servlet.class,
         property = {
                 Constants.SERVICE_DESCRIPTION + "=Interview Pass Error Handling Servlet",
-                Constants.SERVICE_VENDOR + "=Interview Pass",
-                "sling.servlet.paths=sling/servlet/errorhandler/default"
+                Constants.SERVICE_VENDOR + "=Interview Pass"/*,
+                "sling.servlet.paths=sling/servlet/errorhandler/404"*/
         }
 )
 public class InterviewPassErrorHandling extends SlingSafeMethodsServlet {

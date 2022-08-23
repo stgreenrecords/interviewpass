@@ -35,9 +35,9 @@ public final class ResolverProvider {
     @Activate
     @Modified
     public void init(Map<String, Object> properties) {
-        final String service = PropertiesUtil.toString(properties.get(SERVICE), StringUtils.EMPTY);
+        final String service = PropertiesUtil.toString(properties.get(SERVICE), "resolver");
         try {
-               RESOLVER = rrf.getServiceResourceResolver(Collections.singletonMap(ResourceResolverFactory.SUBSERVICE, service));
+               RESOLVER = rrf.getServiceResourceResolver(Collections.singletonMap(ResourceResolverFactory.SUBSERVICE, "resolver"));
         } catch (Exception e) {
             LOG.error(e.getMessage(), e);
         }

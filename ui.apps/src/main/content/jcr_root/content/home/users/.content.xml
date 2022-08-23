@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured">
+    <admin
+            jcr:primaryType="nt:unstructured"
+            firstName="Viachaslau"
+            lastName="Karnaushanka"
+            role="CEO"
+            restFieldType="user"/>
+    <developer
+            jcr:primaryType="nt:unstructured"
+            firstName="Kiryl"
+            lastName="Lutsyk"
+            role="developer"
+            restFieldType="user"/>
+    <service
+            jcr:primaryType="nt:unstructured"
+            firstName="Vladimir"
+            lastName="Putin"
+            role="service"
+            restFieldType="user"/>
+</jcr:root>

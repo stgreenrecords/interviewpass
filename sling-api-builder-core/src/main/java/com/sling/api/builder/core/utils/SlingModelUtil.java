@@ -77,13 +77,13 @@ public final class SlingModelUtil {
         resourceOptional.map(res -> res.adaptTo(Node.class))
                 .ifPresent(node -> {
                     try {
-                        node.addMixin(RestResourceUtil.NT_WEDDING_RESOURCE_MIXIN);
+                        node.addMixin(RestResourceUtil.NT_IP_RESOURCE_MIXIN);
                     } catch (RepositoryException e) {
                         LOG.error(e.getMessage(), e);
                     }
                 });
         resourceOptional.map(res -> res.adaptTo(ModifiableValueMap.class))
-                .ifPresent(properties -> properties.put(RestResourceUtil.REQUEST_PARAMETER_WEDDING_RESOURCE_ID, id));
+                .ifPresent(properties -> properties.put(RestResourceUtil.REQUEST_PARAMETER_IP_RESOURCE_ID, id));
     }
 
     public static Object createModel(SlingHttpServletRequest request, Class modelClass) {
@@ -175,9 +175,9 @@ public final class SlingModelUtil {
 
     public static Resource getBaseUserModelResourceFromChildResources(Resource childResource) {
         ValueMap valueMap = childResource.getValueMap();
-        if (valueMap.containsKey(RestResourceUtil.REQUEST_PARAMETER_WEDDING_RESOURCE_TYPE)) {
-            String resourceType = valueMap.get(RestResourceUtil.REQUEST_PARAMETER_WEDDING_RESOURCE_TYPE, String.class);
-            if (RestResourceUtil.WEDDING_RESOURCE_TYPE_USER.equals(resourceType)) {
+        if (valueMap.containsKey(RestResourceUtil.REQUEST_PARAMETER_RESOURCE_TYPE)) {
+            String resourceType = valueMap.get(RestResourceUtil.REQUEST_PARAMETER_RESOURCE_TYPE, String.class);
+            if (RestResourceUtil.IP_RESOURCE_TYPE_USER.equals(resourceType)) {
                 return childResource;
             } else {
                 return getBaseUserModelResourceFromChildResources(Objects.requireNonNull(childResource.getParent()));

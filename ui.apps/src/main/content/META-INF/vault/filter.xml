@@ -29,7 +29,7 @@
         folder otherwise they wipe all installed bundles.
     -->
     <filter root="/content/home"/>
-    <filter root="/etc"/>
+    <filter root="/etc/ui"/>
     <!--
         Need to exclude the Install folder otherwise the Bundle will be undeployed
         as it is in the '/apps/interviewpass/install' folder (see the 'all'
