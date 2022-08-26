@@ -18,10 +18,19 @@ package interviewpass.servlet;
 
 import java.io.IOException;
 import java.io.Writer;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Spliterator;
+import java.util.Spliterators;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
+import javax.jcr.query.Query;
 import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.osgi.framework.Constants;
 import org.osgi.service.component.annotations.Component;
 
@@ -45,7 +54,7 @@ import org.slf4j.LoggerFactory;
     property = {
         Constants.SERVICE_DESCRIPTION + "=Hello World Path Servlet",
         Constants.SERVICE_VENDOR + "=The Apache Software Foundation",
-        "sling.servlet.paths=/hello-world-servlet"
+        "sling.servlet.paths=/bin/testservlet"
     }
 )
 @SuppressWarnings("serial")
@@ -57,12 +66,21 @@ public class ByPathServlet extends SlingSafeMethodsServlet {
     protected void doGet(SlingHttpServletRequest request,
             SlingHttpServletResponse response) throws ServletException,
             IOException {
+
+        ResourceResolver resourceResolver = request.getResourceResolver();
+
+        Iterator<Resource> iterator = resourceResolver.findResources("SELECT * FROM [sling:Folder] WHERE ISDESCENDANTNODE('/content') AND [testName] = 'testValue'", Query.JCR_SQL2);
+
+        List<Resource> list = StreamSupport.stream(Spliterators.spliteratorUnknownSize(iterator, Spliterator.ORDERED), false)
+                .collect(Collectors.toList());
+
         
         Writer w = response.getWriter();
         w.write("<!DOCTYPE html PUBLIC \"-//IETF//DTD HTML 2.0//EN\">");
         w.write("<html>");
         w.write("<head>");
-        w.write("<title>Hello World Servlet</title>");
+        w.write("<title>" + list +
+                "</title>");
         w.write("</head>");
         w.write("<body>");
         w.write("<h1>Hello World!</h1>");

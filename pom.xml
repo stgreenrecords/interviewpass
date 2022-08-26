@@ -483,7 +483,5 @@
 <modules>
     <module>core</module>
     <module>ui.apps</module>
-    <module>sling-api-builder-core</module>
-    <module>launcher</module>
   </modules>
 </project>
