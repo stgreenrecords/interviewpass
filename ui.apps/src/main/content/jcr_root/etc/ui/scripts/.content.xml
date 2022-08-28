@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="sling:OrderedFolder"
+          embed="[/etc/ui/scripts/jquery-3.6.0.min.js,
+          /etc/ui/scripts/jquery.smartmenus.min.js,
+          /etc/ui/scripts/basescript.js
+          ]"/>

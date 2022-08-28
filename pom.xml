@@ -22,7 +22,7 @@
 
     <groupId>interviewpass-org</groupId>
     <artifactId>interviewpass-main</artifactId>
-    <version>${project.version}</version>
+    <version>1.0-SHAPSHOT</version>
     <packaging>pom</packaging>
 
     <description>interviewpass-main Parent POM</description>
@@ -66,7 +66,7 @@
         <surfire.plugin.version>3.0.0-M3</surfire.plugin.version>
         <failsafe.plugin.version>3.0.0-M3</failsafe.plugin.version>
         <deploy.plugin.version>3.0.0-M1</deploy.plugin.version>
-        <sling.plugin.version>2.4.0</sling.plugin.version>
+        <sling.plugin.version>2.4.2</sling.plugin.version>
         <dependency.plugin.version>3.1.1</dependency.plugin.version>
         <build.helper.plugin.version>3.0.0</build.helper.plugin.version>
         <wcmio.plugin.version>1.7.6</wcmio.plugin.version>
@@ -478,10 +478,22 @@
                 <groupId>org.apache.jackrabbit</groupId>
                 <scope>provided</scope>
             </dependency>
+            <dependency>
+                <artifactId>org.apache.sling.auth.core</artifactId>
+                <version>1.5.6</version>
+                <groupId>org.apache.sling</groupId>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <artifactId>commons-codec</artifactId>
+                <version>1.15</version>
+                <groupId>commons-codec</groupId>
+                <scope>provided</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 <modules>
-    <module>core</module>
+    <module>app-core</module>
     <module>ui.apps</module>
   </modules>
 </project>

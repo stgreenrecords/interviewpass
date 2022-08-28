@@ -50,13 +50,6 @@
         and through the System Console can lead to unexpected
         and errorneous situations.
     -->
-    <dependencies>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>core</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-    </dependencies>
 
     <build>
         <plugins>
@@ -65,14 +58,6 @@
                 <artifactId>filevault-package-maven-plugin</artifactId>
                 <configuration>
                     <filterSource>${basedir}/src/main/content/META-INF/vault/filter.xml</filterSource>
-                    <embeddedTarget>/apps/interviewpass/install</embeddedTarget>
-                    <embeddeds>
-                        <embedded>
-                            <groupId>${project.groupId}</groupId>
-                            <artifactId>core</artifactId>
-                            <filter>true</filter>
-                        </embedded>
-                    </embeddeds>
                 </configuration>
             </plugin>
             <plugin>
